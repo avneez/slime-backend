@@ -28,7 +28,7 @@ app.get('/', (req, res)=>{
 const PORT = process.env.PORT || 5000;
 
 try {
-  await mongoose.connect(mongodb+srv://avneez:azkaban@cluster0.ekzfq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority);
+  await mongoose.connect(process.env.CONNECTION_URL);
 } catch (error) {
   console.log('connnection error', error)
 }
